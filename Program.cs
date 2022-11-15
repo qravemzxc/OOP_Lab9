@@ -3,18 +3,16 @@ using System.Collections.Specialized;
 
 namespace Lab9
 {
-    class Services
+ 
+    interface IOrderedDictionary
     {
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public Services(string name, int price)
-        {
-            Name = name;
-            Price = price;
-            
-        }
-    }
 
+        void Add(object value);
+        bool Contains(object value); // проверка наличия элемента в коллекции
+        void Remove(); // удаление элемента из коллекции
+        void Print();
+
+    }
     class Collection<T>:IOrderedDictionary
     {
         public Queue<T> queue = new Queue<T>();
